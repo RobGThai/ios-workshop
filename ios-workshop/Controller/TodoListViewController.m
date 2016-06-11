@@ -7,7 +7,7 @@
 //
 
 #import "TodoListViewController.h"
-#import "Model/Todo.h"
+#import "Todo.h"
 
 @interface TodoListViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -28,7 +28,7 @@
     
     for (int i = 0; i <= 100; i++) {
         NSString *title =
-            [NSString stringWithFormat:@"Row %d", indexPath.row];
+            [NSString stringWithFormat:@"Row %d", i];
         Todo *todo = [[Todo alloc] initWithTitle: title];
         [self.todoList addObject: todo];
     }
@@ -47,7 +47,7 @@
 
 - (NSInteger)tableView:
     (UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
+    return self.todoList.count;
 }
 
 - (UITableViewCell *)tableView:
@@ -62,10 +62,29 @@
                   reuseIdentifier: cellIdentifier];
     }
     
-    cell.textLabel.text =
-        [NSString stringWithFormat:@"Row %d", indexPath.row];
+    Todo *todo = self.todoList[indexPath.row];
+    cell.textLabel.text = todo.title;
+    
+    cell.textLabel.textColor =
+        [todo isDone]
+            ?[UIColor lightGrayColor]
+            :[UIColor blackColor];
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Todo *todo = self.todoList[indexPath.row];
+    [todo toggleDone];
+    
+    [self.tableView reloadData];
+}
+
+
+
+
+
 
 @end
