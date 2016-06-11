@@ -6,4 +6,21 @@
 //  Copyright © 2016 Poohdish Rattanavijai. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Todo.h"
+
+@implementation Todo
+
+- (instancetype)initWithTitle:(NSString *)title {
+    self = [super init];
+    if (self) {
+        self.title = title;
+    }
+    return self;
+}
+
+- (void) toggleDone {
+    // '_' prefix access property directly without getter/setter
+    _done = !self.done;
+}
+
+@end

@@ -6,8 +6,14 @@
 //  Copyright © 2016 Poohdish Rattanavijai. All rights reserved.
 //
 
-#ifndef Todo_h
-#define Todo_h
+#import <Foundation/Foundation.h>
 
+@interface Todo : NSObject
 
-#endif /* Todo_h */
+@property(nonatomic, copy) NSString *title;
+@property(nonatomic, assign, readonly, getter=isDone) BOOL done;
+
+- (instancetype) initWithTitle:(NSString *) title;
+- (void) toggleDone;
+
+@end

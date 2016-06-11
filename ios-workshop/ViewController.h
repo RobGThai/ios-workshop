@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *btnAccept;
+@property (weak, nonatomic) IBOutlet UIButton *btnDelete;
+@property (weak, nonatomic) IBOutlet UILabel *txtAction;
 
 
 @end

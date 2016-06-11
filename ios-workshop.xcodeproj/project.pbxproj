@@ -15,6 +15,8 @@
 		A85D648A1D0BE81700327D84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85D64881D0BE81700327D84 /* LaunchScreen.storyboard */; };
 		A85D64951D0BE81700327D84 /* ios_workshopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D64941D0BE81700327D84 /* ios_workshopTests.m */; };
 		A85D64A01D0BE81700327D84 /* ios_workshopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D649F1D0BE81700327D84 /* ios_workshopUITests.m */; };
+		A85D64B21D0BFBAC00327D84 /* TodoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D64B11D0BFBAC00327D84 /* TodoListViewController.m */; };
+		A85D64B51D0BFF2E00327D84 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D64B41D0BFF2E00327D84 /* Todo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		A85D649B1D0BE81700327D84 /* ios-workshopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-workshopUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85D649F1D0BE81700327D84 /* ios_workshopUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_workshopUITests.m; sourceTree = "<group>"; };
 		A85D64A11D0BE81700327D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A85D64B01D0BFBAC00327D84 /* TodoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoListViewController.h; sourceTree = "<group>"; };
+		A85D64B11D0BFBAC00327D84 /* TodoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoListViewController.m; sourceTree = "<group>"; };
+		A85D64B41D0BFF2E00327D84 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		A85D64B61D0BFF5300327D84 /* Todo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Todo.h; path = Model/Todo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		A85D64791D0BE81700327D84 /* ios-workshop */ = {
 			isa = PBXGroup;
 			children = (
+				A85D64B31D0BFE3300327D84 /* Model */,
 				A85D647D1D0BE81700327D84 /* AppDelegate.h */,
 				A85D647E1D0BE81700327D84 /* AppDelegate.m */,
 				A85D64801D0BE81700327D84 /* ViewController.h */,
@@ -110,6 +117,8 @@
 				A85D64881D0BE81700327D84 /* LaunchScreen.storyboard */,
 				A85D648B1D0BE81700327D84 /* Info.plist */,
 				A85D647A1D0BE81700327D84 /* Supporting Files */,
+				A85D64B01D0BFBAC00327D84 /* TodoListViewController.h */,
+				A85D64B11D0BFBAC00327D84 /* TodoListViewController.m */,
 			);
 			path = "ios-workshop";
 			sourceTree = "<group>";
@@ -138,6 +147,15 @@
 				A85D64A11D0BE81700327D84 /* Info.plist */,
 			);
 			path = "ios-workshopUITests";
+			sourceTree = "<group>";
+		};
+		A85D64B31D0BFE3300327D84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A85D64B41D0BFF2E00327D84 /* Todo.m */,
+				A85D64B61D0BFF5300327D84 /* Todo.h */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85D64B51D0BFF2E00327D84 /* Todo.m in Sources */,
+				A85D64B21D0BFBAC00327D84 /* TodoListViewController.m in Sources */,
 				A85D64821D0BE81700327D84 /* ViewController.m in Sources */,
 				A85D647F1D0BE81700327D84 /* AppDelegate.m in Sources */,
 				A85D647C1D0BE81700327D84 /* main.m in Sources */,
@@ -415,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = "ios-workshop/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robgthai.ios-workshop";
@@ -426,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = "ios-workshop/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robgthai.ios-workshop";
@@ -498,6 +520,7 @@
 				A85D64A61D0BE81700327D84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A85D64A71D0BE81700327D84 /* Build configuration list for PBXNativeTarget "ios-workshopTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +529,7 @@
 				A85D64A91D0BE81700327D84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A85D64AA1D0BE81700327D84 /* Build configuration list for PBXNativeTarget "ios-workshopUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +538,7 @@
 				A85D64AC1D0BE81700327D84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

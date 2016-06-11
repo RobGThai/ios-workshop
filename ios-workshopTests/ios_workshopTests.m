@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Todo.h"
 
 @interface ios_workshopTests : XCTestCase
 
@@ -24,16 +25,30 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void) testInitializeWithoutParam{
+    Todo *todo = [Todo new];
+    XCTAssertNotNil(todo);
+}
+
+- (void) testInitialize{
+    Todo *todo = [[Todo alloc] initWithTitle: @"My Title"];
+    
+    XCTAssertEqual(todo.title, @"My Title");
+}
+
+- (void) testDoneAction{
+    Todo *todo = [[Todo alloc] initWithTitle: @"My Title"];
+    
+    XCTAssertFalse(todo.isDone);
+    [todo toggleDone];
+    XCTAssertTrue(todo.isDone);
 }
 
 @end
