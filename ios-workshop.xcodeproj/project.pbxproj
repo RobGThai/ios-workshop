@@ -15,8 +15,8 @@
 		A85D648A1D0BE81700327D84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85D64881D0BE81700327D84 /* LaunchScreen.storyboard */; };
 		A85D64951D0BE81700327D84 /* ios_workshopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D64941D0BE81700327D84 /* ios_workshopTests.m */; };
 		A85D64A01D0BE81700327D84 /* ios_workshopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D649F1D0BE81700327D84 /* ios_workshopUITests.m */; };
-		A85D64B21D0BFBAC00327D84 /* TodoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D64B11D0BFBAC00327D84 /* TodoListViewController.m */; };
 		A85D64B51D0BFF2E00327D84 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D64B41D0BFF2E00327D84 /* Todo.m */; };
+		A85D64BA1D0C0D1E00327D84 /* TodoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D64B91D0C0D1E00327D84 /* TodoListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +53,10 @@
 		A85D649B1D0BE81700327D84 /* ios-workshopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-workshopUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85D649F1D0BE81700327D84 /* ios_workshopUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_workshopUITests.m; sourceTree = "<group>"; };
 		A85D64A11D0BE81700327D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A85D64B01D0BFBAC00327D84 /* TodoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoListViewController.h; sourceTree = "<group>"; };
-		A85D64B11D0BFBAC00327D84 /* TodoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoListViewController.m; sourceTree = "<group>"; };
 		A85D64B41D0BFF2E00327D84 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
-		A85D64B61D0BFF5300327D84 /* Todo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Todo.h; path = Model/Todo.h; sourceTree = "<group>"; };
+		A85D64B81D0C0D1E00327D84 /* TodoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoListViewController.h; sourceTree = "<group>"; };
+		A85D64B91D0C0D1E00327D84 /* TodoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoListViewController.m; sourceTree = "<group>"; };
+		A85D64BB1D0C13BB00327D84 /* Todo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +118,6 @@
 				A85D64881D0BE81700327D84 /* LaunchScreen.storyboard */,
 				A85D648B1D0BE81700327D84 /* Info.plist */,
 				A85D647A1D0BE81700327D84 /* Supporting Files */,
-				A85D64B01D0BFBAC00327D84 /* TodoListViewController.h */,
-				A85D64B11D0BFBAC00327D84 /* TodoListViewController.m */,
 			);
 			path = "ios-workshop";
 			sourceTree = "<group>";
@@ -154,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				A85D64B41D0BFF2E00327D84 /* Todo.m */,
-				A85D64B61D0BFF5300327D84 /* Todo.h */,
+				A85D64BB1D0C13BB00327D84 /* Todo.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +160,8 @@
 		A85D64B71D0C0C6600327D84 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A85D64B81D0C0D1E00327D84 /* TodoListViewController.h */,
+				A85D64B91D0C0D1E00327D84 /* TodoListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85D64B51D0BFF2E00327D84 /* Todo.m in Sources */,
-				A85D64B21D0BFBAC00327D84 /* TodoListViewController.m in Sources */,
+				A85D64BA1D0C0D1E00327D84 /* TodoListViewController.m in Sources */,
 				A85D64821D0BE81700327D84 /* ViewController.m in Sources */,
 				A85D647F1D0BE81700327D84 /* AppDelegate.m in Sources */,
 				A85D647C1D0BE81700327D84 /* main.m in Sources */,

@@ -7,8 +7,14 @@
 //
 
 #import "TodoListViewController.h"
+#import "Model/Todo.h"
 
-@interface TodoListViewController ()
+@interface TodoListViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, weak) IBOutlet
+    UITableView *tableView;
+
+@property (nonatomic, strong) NSMutableArray *todoList;
 
 @end
 
@@ -16,7 +22,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // Setup Data
+    self.todoList = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i <= 100; i++) {
+        NSString *title =
+            [NSString stringWithFormat:@"Row %d", indexPath.row];
+        Todo *todo = [[Todo alloc] initWithTitle: title];
+        [self.todoList addObject: todo];
+    }
+    
+    // Setup TableView
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +43,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - UITableViewDataSource
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:
+    (UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 100;
 }
-*/
+
+- (UITableViewCell *)tableView:
+(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"TodoCellIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                  reuseIdentifier: cellIdentifier];
+    }
+    
+    cell.textLabel.text =
+        [NSString stringWithFormat:@"Row %d", indexPath.row];
+    
+    return cell;
+}
 
 @end
