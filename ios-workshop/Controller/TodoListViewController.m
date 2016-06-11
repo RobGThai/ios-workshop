@@ -6,7 +6,11 @@
 //  Copyright © 2016 Poohdish Rattanavijai. All rights reserved.
 //
 
+// Controller
 #import "TodoListViewController.h"
+#import "DetailViewController.h"
+
+// Model
 #import "Todo.h"
 
 @interface TodoListViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -38,6 +42,11 @@
     self.tableView.delegate = self;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -67,21 +76,30 @@
     
     cell.textLabel.textColor =
         [todo isDone]
-            ?[UIColor lightGrayColor]
-            :[UIColor blackColor];
+            ?[UIColor blackColor]
+            :[UIColor lightGrayColor];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     Todo *todo = self.todoList[indexPath.row];
-    [todo toggleDone];
-    
-    [self.tableView reloadData];
+    [self navigateToDetailWith:todo];
 }
 
+- (void) navigateToDetailWith: (Todo *) todo {
+    DetailViewController *detailVC =
+    [[DetailViewController alloc] initWithNibName:@"DetailViewController"
+                                           bundle:nil];
+    
+    detailVC.todo = todo;
+    [self.navigationController
+     pushViewController:detailVC
+     animated:YES];
+}
 
 
 

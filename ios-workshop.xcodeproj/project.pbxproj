@@ -17,6 +17,8 @@
 		A85D64A01D0BE81700327D84 /* ios_workshopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D649F1D0BE81700327D84 /* ios_workshopUITests.m */; };
 		A85D64B51D0BFF2E00327D84 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D64B41D0BFF2E00327D84 /* Todo.m */; };
 		A85D64BA1D0C0D1E00327D84 /* TodoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D64B91D0C0D1E00327D84 /* TodoListViewController.m */; };
+		A85D64BF1D0C179C00327D84 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85D64BD1D0C179C00327D84 /* DetailViewController.m */; };
+		A85D64C01D0C179C00327D84 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85D64BE1D0C179C00327D84 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		A85D64B81D0C0D1E00327D84 /* TodoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoListViewController.h; sourceTree = "<group>"; };
 		A85D64B91D0C0D1E00327D84 /* TodoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoListViewController.m; sourceTree = "<group>"; };
 		A85D64BB1D0C13BB00327D84 /* Todo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		A85D64BC1D0C179C00327D84 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		A85D64BD1D0C179C00327D84 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		A85D64BE1D0C179C00327D84 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +167,9 @@
 			children = (
 				A85D64B81D0C0D1E00327D84 /* TodoListViewController.h */,
 				A85D64B91D0C0D1E00327D84 /* TodoListViewController.m */,
+				A85D64BC1D0C179C00327D84 /* DetailViewController.h */,
+				A85D64BD1D0C179C00327D84 /* DetailViewController.m */,
+				A85D64BE1D0C179C00327D84 /* DetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 				A85D648A1D0BE81700327D84 /* LaunchScreen.storyboard in Resources */,
 				A85D64871D0BE81700327D84 /* Assets.xcassets in Resources */,
 				A85D64851D0BE81700327D84 /* Main.storyboard in Resources */,
+				A85D64C01D0C179C00327D84 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +310,7 @@
 				A85D64821D0BE81700327D84 /* ViewController.m in Sources */,
 				A85D647F1D0BE81700327D84 /* AppDelegate.m in Sources */,
 				A85D647C1D0BE81700327D84 /* main.m in Sources */,
+				A85D64BF1D0C179C00327D84 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
