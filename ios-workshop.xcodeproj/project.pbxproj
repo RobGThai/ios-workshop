@@ -107,6 +107,7 @@
 		A85D64791D0BE81700327D84 /* ios-workshop */ = {
 			isa = PBXGroup;
 			children = (
+				A85D64B71D0C0C6600327D84 /* Controller */,
 				A85D64B31D0BFE3300327D84 /* Model */,
 				A85D647D1D0BE81700327D84 /* AppDelegate.h */,
 				A85D647E1D0BE81700327D84 /* AppDelegate.m */,
@@ -155,7 +156,14 @@
 				A85D64B41D0BFF2E00327D84 /* Todo.m */,
 				A85D64B61D0BFF5300327D84 /* Todo.h */,
 			);
-			name = Model;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A85D64B71D0C0C6600327D84 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
