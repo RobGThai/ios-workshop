@@ -9,11 +9,12 @@
 // Controller
 #import "TodoListViewController.h"
 #import "DetailViewController.h"
+#import "ComposerViewController.h"
 
 // Model
 #import "Todo.h"
 
-@interface TodoListViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface TodoListViewController () <UITableViewDataSource, UITableViewDelegate, ComposerDelegate>
 
 @property (nonatomic, weak) IBOutlet
     UITableView *tableView;
@@ -30,7 +31,7 @@
     // Setup Data
     self.todoList = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i <= 100; i++) {
+    for (int i = 0; i <= 10; i++) {
         NSString *title =
             [NSString stringWithFormat:@"Row %d", i];
         Todo *todo = [[Todo alloc] initWithTitle: title];
@@ -101,8 +102,27 @@
      animated:YES];
 }
 
+#pragma mark - IBAction
+
+- (IBAction)addButtonClick:(id)sender {
+    ComposerViewController *composerVC = [[ComposerViewController alloc] init];
+    
+    UINavigationController *navVC = [[UINavigationController alloc]
+                                    initWithRootViewController:composerVC];
+    composerVC.delegate = self;
+    [self.navigationController presentViewController:navVC
+                                            animated:YES
+                                          completion:nil];
+}
 
 
+#pragma mark - Delegate
 
+- (void)composer:(ComposerViewController *)composerVC
+   didCreateTodo:(Todo *)todo {
+    [self.todoList addObject:todo];
+    [self.tableView reloadData];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

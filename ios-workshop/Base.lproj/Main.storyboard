@@ -30,7 +30,13 @@
                             <constraint firstItem="PCh-Mc-hM6" firstAttribute="leading" secondItem="bie-MM-O6j" secondAttribute="leading" id="wr3-Br-tli"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DDg-8X-Wx3"/>
+                    <navigationItem key="navigationItem" id="DDg-8X-Wx3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bwc-gn-GFF">
+                            <connections>
+                                <action selector="addButtonClick:" destination="Mxu-kR-ldV" id="IXt-Yf-qMX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="PCh-Mc-hM6" id="ID9-IO-VpG"/>
                     </connections>
@@ -124,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugi-v6-cia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="173" y="-973"/>
+            <point key="canvasLocation" x="173" y="-513"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ibC-es-GU8">
