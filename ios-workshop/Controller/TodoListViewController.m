@@ -14,7 +14,8 @@
 // Model
 #import "Todo.h"
 
-@interface TodoListViewController () <UITableViewDataSource, UITableViewDelegate, ComposerDelegate>
+@interface TodoListViewController () <UITableViewDataSource,
+    UITableViewDelegate, ComposerDelegate, DetailDelegate>
 
 @property (nonatomic, weak) IBOutlet
     UITableView *tableView;
@@ -96,6 +97,7 @@
     [[DetailViewController alloc] initWithNibName:@"DetailViewController"
                                            bundle:nil];
     
+    detailVC.delegate = self;
     detailVC.todo = todo;
     [self.navigationController
      pushViewController:detailVC
@@ -123,6 +125,13 @@
     [self.todoList addObject:todo];
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)detailView:(DetailViewController *)detailVC
+   didDeleteTodo:(Todo *)todo {
+    [self.todoList removeObject:todo];
+    [self.tableView reloadData];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

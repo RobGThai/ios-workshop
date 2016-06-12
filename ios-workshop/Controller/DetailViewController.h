@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Todo;
+
+@class DetailViewController, Todo;
+
+@protocol DetailDelegate <NSObject>
+
+- (void) detailView:(DetailViewController *)detailVC didDeleteTodo:(Todo *) todo;
+
+@end
 
 @interface DetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *textTitle;
 @property (weak, nonatomic) IBOutlet UISwitch *switchDone;
 @property (weak, nonatomic) Todo *todo;
+@property (weak, nonatomic) id<DetailDelegate> delegate;
 @end
