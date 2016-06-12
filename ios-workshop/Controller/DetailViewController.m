@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    NSLog(@"TODO: %@", self.todo.title);
+    self.title = @"Detail";
     self.textTitle.text = self.todo.title;
     
     self.switchDone.on = self.todo.isDone;
